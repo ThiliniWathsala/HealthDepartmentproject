@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'healthDepartment';
-  logo: String = "assets/Images/logo.png"; 
-  heading: String= "assets/Images/heading.png";
+
   
 }
