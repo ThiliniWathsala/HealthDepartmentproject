@@ -9,6 +9,7 @@ export class MainPageComponent implements OnInit {
 
   logo: String = "assets/Images/logo.png"; 
   heading: String= "assets/Images/heading.png";
+  sky: String= "assets/Images/sky.jpg";
 
   constructor() { }
 

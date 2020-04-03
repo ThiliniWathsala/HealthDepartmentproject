@@ -7,3 +7,22 @@
 .right{
     left:60px ;
 }
+.navbar{
+    background-color: rgb(210, 234, 248) !important ;
+}
+
+.navbar .nav li a{
+    color: rgb(41, 122, 168) !important;
+    font-size:large;
+    
+}
+
+.navbar .nav li{
+  
+}
+
+.navbar .nav-item .dropdown-menu  .dropdown-item:hover{
+   color: rgb(10, 31, 153) !important;
+   background-color: rgb(183, 203, 211);
+   opacity: 0.5;
+}

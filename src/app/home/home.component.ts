@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  flower1:String = "assets/Images/flower1.jfif"; 
+  flower2:String = "assets/Images/flower2.jpg"; 
+  flower3:String = "assets/Images/flower3.jpg"; 
   constructor() { }
 
   ngOnInit() {
