@@ -5,3 +5,57 @@
 .d-block{
     height:1000px ;
 }
+
+body{
+  margin: 0;
+  padding: 0;
+}
+.headline{
+  position: absolute;
+  background: darkred;
+  color: ghostwhite;
+  font-size: 27px;
+  font-family: sans-serif;
+  padding: 9px 27px 20px 90px;
+  width:178px ;
+  text-align: center;
+
+
+}
+.news-area{
+  width: 101.75%;
+  overflow: hidden;
+}
+.ticker{
+  width: 88%;
+  padding-left: 88%;
+  margin-left: 175px;
+  background: #a30525;
+}
+.ticker-animation{
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  animation: ticker 45s linear infinite;
+
+}
+@keyframes ticker {
+  0%{
+    transform: translate3d(0,0,0);
+  }
+  100%{
+    transform: translate3d(-100%,0,0);
+  }
+
+}
+
+.ticker-animation:hover{
+  animation-play-state: paused;
+}
+
+.ticker-item{
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 25px;
+  color: ghostwhite;
+}

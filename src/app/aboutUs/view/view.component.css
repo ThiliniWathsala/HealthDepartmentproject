@@ -1,0 +1,19 @@
+.p2{
+
+  font-size: 25px !important;
+  font-weight: bold !important;
+  color: aliceblue !important;
+
+}
+.card{
+  background-color:#538eb8;
+  background-image: linear-gradient(to bottom right, #3e858b, #80c2d0, rgb(161, 200, 220),#e3edf3);
+}
+.list-group-item{
+  background-color:#538eb8;
+  background-image: linear-gradient(to bottom right,#c3dddf ,#d5e3e6,rgb(226, 234, 238),#e3edf3);
+
+}
+.btn btn-link{
+
+}

@@ -8,18 +8,19 @@
     left:60px ;
 }
 .navbar{
-    background-color: rgb(181, 216, 236) !important ;
+    background-color: rgb(5, 39, 73) !important ;
 }
 
 .navbar .nav li a{
-    color: rgb(41, 122, 168) !important;
+    color: rgb(226, 233, 238) !important;
     font-size:x-large;
-    
+
 }
 
 .navbar .nav li div a{
     font-size:large;
-    
+  color: rgb(4, 35, 57) !important;
+
 }
 
 .navbar .nav-item .dropdown-menu  .dropdown-item:hover{
@@ -30,4 +31,8 @@
 
 .navbar .collapse{
     align-items: center;
+}
+
+.dropdown:hover>.dropdown-menu{
+  display: block;
 }
