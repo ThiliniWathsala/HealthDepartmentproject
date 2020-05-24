@@ -1,1 +1,15 @@
-<p>admin-login works!</p>
+<body *ngIf="user">
+
+
+
+
+
+
+<p style="font-size: x-large" *ngIf="user">Logged in as: {{ user?.email }} - {{user?.displayName}}</p>
+
+<button class="btn btn-primary mr-2" *ngIf="user" (click)="register()">Register</button>
+<button class="btn btn-primary" *ngIf="user" (click)="logout()">Logout</button>
+</body>
+
+<button class="btn btn-primary" *ngIf="!user" (click)="login()">Login</button>
+

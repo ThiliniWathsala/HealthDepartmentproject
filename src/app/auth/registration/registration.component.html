@@ -1,0 +1,74 @@
+
+
+<body *ngIf="user">
+
+
+<div class="row mt-4"style="margin: 2%" >
+  <div class="col-12">
+    <h4>User Registration</h4>
+  </div>
+  <br><br><br>
+  <div class="col-12">
+    <div class="row" *ngIf="authError">
+      <div class="col-12 alert alert-danger">
+        {{authError?.message}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-ms-2"></div>
+      <div class="col-ms-7">
+
+        <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)">
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <label for="firstName">First Name</label>
+              <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col-md-6 mb-2">
+              <label for="lasttName">Last Name</label>
+              <input ngModel #lastname="ngModel" name="lastName" type="text" class="form-control" placeholder="Last name">
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-md-12 mb-2">
+              <label for="email">Email</label>
+              <input ngModel #email="ngModel" name="email" type="email" class="form-control">
+            </div>
+
+            <div class="col-md-12 mb-2">
+              <label for="password">Password</label>
+              <input ngModel #password="ngModel" name="password" type="password" class="form-control" >
+            </div>
+            <div class="col-md-12 mb-2">
+              <label for="Confirm password">Confirm Password</label>
+              <input name="password" type="password" class="form-control">
+            </div>
+
+            <div class="row"style="margin: 0.5%">
+              <div class="col-md-12">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+
+            <div class="row"style="margin: 0.5%">
+              <div class="col-md-12">
+                <button class="btn btn-primary" type="submit" (click)="backon()">Back</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+      <div class="col-ms-3"></div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+<h1 style="padding: 10%; text-align: center; color: red" *ngIf="!user">Access Denied!!!!</h1>
+
+
