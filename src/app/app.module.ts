@@ -7,6 +7,8 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ViewComponent } from './aboutUs/view/view.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { ViewComponent } from './aboutUs/view/view.component';
     MainPageComponent,
     FooterComponent,
     HomeComponent,
-    ViewComponent
+    ViewComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
