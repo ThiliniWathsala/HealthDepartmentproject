@@ -26,8 +26,13 @@ export class AuthService {
   login(email:string,password:string){
     this.afAuth.signInWithEmailAndPassword(email,password)
       .catch(error=>{
-        this.eventAuthError.next(error);
         this.router.navigate(['/login']);
+
+        this.eventAuthError.next(error);
+        // window.location.reload();
+
+        //this.clearData(email,password);
+
       })
       .then(userCredencial => {
         if(userCredencial){
@@ -35,6 +40,7 @@ export class AuthService {
         }
       })
   }
+
 
 
   createUser(user) {
@@ -52,6 +58,7 @@ export class AuthService {
       })
       .catch( error =>{
         this.eventAuthError.next(error);
+        window.location.reload();
       })
   }
 

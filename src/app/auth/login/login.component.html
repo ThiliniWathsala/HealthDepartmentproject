@@ -1,49 +1,34 @@
-<div class="row">
-  <div style="margin: 21%;" class="col-ms-2" ></div>
-  <div style="margin-top: 7%;" class="col-ms-7">
+<div class="body">
+  <div class="grad"></div>
+  <div class="login">
 
-    <h2 style="margin: 21px;text-align: center"> Admin Login </h2>
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
 
-      <div class="row" *ngIf="authError">
-        <div class="col-12 alert alert-danger">
-          {{authError?.message}}
-        </div>
-
+      <h3>Admin Login</h3><br>
+      <div  *ngIf="authError" class="col-12 alert alert-danger">
+        {{authError?.message}}
       </div>
 
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col-10">
-          <div class="row">
-            <div class="col-ms-12 mb-2">
-              <label for="email" style="font-size: larger">Email</label>
-              <input ngModel #email="ngModel" name="email" type="email" class="form-control">
-            </div>
-          </div>
+      <label for="email" style="font-size: larger;font-weight: bold">Email</label>
+      <input ngModel #email="ngModel" name="email" type="email" class="form-control">
+      <br><br>
 
-          <div class="row">
-            <div class="col-ms-12 mb-4">
-              <label for="password"  style="font-size: larger">Password</label>
-              <input ngModel #password="ngModel" name="password" type="password" class="form-control" >
-            </div>
-          </div>
+      <label for="password"  style="font-size: larger;font-weight: bold">Password</label>
+      <input ngModel #password="ngModel" name="password" type="password" class="form-control" >
 
-<!--          <div class="row mt-2">-->
-<!--            <div class="col-12">-->
-<!--              <a href="/regiser">Click here to register</a>-->
-<!--            </div>-->
-<!--          </div>-->
-
-          <div class="row">
-            <div class="col-md-12">
-              <button class="btn btn-primary" type="submit">Login</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <br><br>
+      <button class="btn btn-primary" type="submit">Login</button>
     </form>
   </div>
-  <div class="col-ms-3"></div>
+
+
+
+
 </div>
+
+
+
+
+
+
 

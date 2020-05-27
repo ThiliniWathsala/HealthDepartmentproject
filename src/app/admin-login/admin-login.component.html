@@ -1,15 +1,54 @@
+
+
+<!-- <nav class="navbar navbar-light" style="background-color: #74a8ce;"> -->
+
+
+
+
+
+
+
 <body *ngIf="user">
+<div class="row">
+  <div class="col-4">
 
+    <header class="header" role="banner">
 
-
-
-
-
-<p style="font-size: x-large" *ngIf="user">Logged in as: {{ user?.email }} - {{user?.displayName}}</p>
-
-<button class="btn btn-primary mr-2" *ngIf="user" (click)="register()">Register</button>
-<button class="btn btn-primary" *ngIf="user" (click)="logout()">Logout</button>
+      <h1 class="logo">
+        <span>{{user?.displayName}}</span>
+        <span>{{ user?.email }} </span>
+      </h1>
+      <div class="nav-wrap">
+        <nav class="main-nav" role="navigation">
+          <ul class="unstyled list-hover-slide">
+            <li>
+              <a routerLink="/Geveo/Dashboard">Add Photos</a>
+            </li>
+            <li>
+              <a routerLink="/Geveo/JobPosts">Add Videos</a>
+            </li>
+            <li>
+              <a routerLink="/Geveo/NewPost">Update News</a>
+            </li>
+            <li>
+              <a routerLink="/Geveo/NewPosition">Add New Position</a>
+            </li>
+          </ul><br><br>
+          <div class="dbutton">
+            <button style="right: 100px" class="btn btn-primary mr-2" *ngIf="user" (click)="register()">Register</button>
+            <button style="right: 100px" class="btn btn-primary" *ngIf="user" (click)="logout()">Logout</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+</div>
 </body>
+<div *ngIf="isLoading" class="spinner"></div>
+<!--<div *ngIf="!user">-->
+<!--  <h1 style="padding: 10%; text-align: center; color: red;font-weight: bolder" >Cannot Access the Admin Page!</h1>-->
+<!--</div>-->
 
-<button class="btn btn-primary" *ngIf="!user" (click)="login()">Login</button>
+
+<!--<button class="btn btn-primary" *ngIf="!user" (click)="login()">Login</button>-->
 
