@@ -46,8 +46,8 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule , // for realtime database
-    ReactiveFormsModule   // for reactive forms to upload images
-
+    ReactiveFormsModule,   // for reactive forms to upload images
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
