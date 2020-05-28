@@ -14,8 +14,12 @@ import { ViewComponent } from './aboutUs/view/view.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { LoginComponent } from './auth/login/login.component';
 import {RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegistrationComponent } from './auth/registration/registration.component';
+import { ImagesComponent } from './images/images.component';
+import { ImageComponent } from './images/image/image.component';
+import { ImageListComponent } from './images/image-list/image-list.component';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
 
 
 @NgModule({
@@ -28,7 +32,10 @@ import { RegistrationComponent } from './auth/registration/registration.componen
     ViewComponent,
     AdminLoginComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ImagesComponent,
+    ImageComponent,
+    ImageListComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,9 @@ import { RegistrationComponent } from './auth/registration/registration.componen
     RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireDatabaseModule , // for realtime database
+    ReactiveFormsModule   // for reactive forms to upload images
 
   ],
   providers: [],
