@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AngularFireStorage} from '@angular/fire/storage';
+import {finalize} from 'rxjs/operators';
 
 @Component({
   selector: 'app-image',
@@ -9,13 +11,15 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class ImageComponent implements OnInit {
   newCaption:string;
   capList: Array<any> = [];
-  defaultImage ='assets/Images/default.jpg';
-  selectedImage:any = null;  // to save the image in variable
-  isSubmitted:boolean = false;
-  constructor() { }
+  defaultImage ='';
+  selectedImage;  // to save the image in variable
+  isSubmitted:boolean;
+  constructor(private storage:AngularFireStorage,) { }
 
   ngOnInit() {
-    this.capList.push(this.newCaption);
+    //this.capList.push(this.newCaption);
+    this.resetForm();
+
   }
 
   formTemplate = new FormGroup({
@@ -38,15 +42,39 @@ export class ImageComponent implements OnInit {
   }
 
   onSubmit(formValue){
-    this.capList.push(this.newCaption);
-    this.newCaption="";
+   // this.capList.push(this.newCaption);
+  //  this.newCaption="";
     this.isSubmitted = true;
+    if(this.formTemplate.valid){
+        var filepath = `${formValue.category}/${this.selectedImage.name}_${new Date().getTime()}`;  // avoid the duplicate image url in firebase
+        const fileRef = this.storage.ref(filepath);  // to reference the image in storage
+        this.storage.upload(filepath,this.selectedImage).snapshotChanges().pipe(
+          finalize(()=>{    // this finaliza call when upload is 100% completed
+            fileRef.getDownloadURL().subscribe((url)=>{   // retrive the uploaded image URl
+              formValue['imageUrl']=url;
+              this.resetForm();
+            })
+          })
+        ).subscribe();   // snapshotChanges() used to work with the response of upload
+    }
+
   }
 
   get formControls(){
     return this.formTemplate['controls'];
   }
+  resetForm(){
+    this.formTemplate.reset();
+    this.formTemplate.setValue({
+      caption:'',
+      category:'',
+      imageUrl:''
+    });
+    this.defaultImage ='assets/Images/default.jpg';
+    this.selectedImage= null;  // to save the image in variable
+    this.isSubmitted= false;
 
+  }
 
 
 }

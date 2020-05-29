@@ -6,7 +6,7 @@
     </div>
     <div class="form-group">
       <label>Select file to upload</label>
-      <input type="file" class="form-control" #fileUploader formControlName="imageUrl" (change)="setImage($event)">
+      <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl" (change)="setImage($event)">
       <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required! </div>
     </div>
     <div class="form-group">
@@ -15,14 +15,14 @@
 
     </div>
 
-    <div class="form-group">
-      <input type="text" name="newCaption" placeholder="Albem Name" [(ngModel)]="newCaption"  [ngModelOptions]="{standalone: true}">
-    </div>
+<!--    <div class="form-group">-->
+<!--      <input type="text" name="newCaption" placeholder="Albem Name" [(ngModel)]="newCaption"  [ngModelOptions]="{standalone: true}">-->
+<!--    </div>-->
 
     <div class="form-group">
-      <select formControlName="category" class="form-control" >
-        <option *ngFor="let item of capList" [ngValue]="item">{{item}}</option>
-      </select>
+      <input type="text" formControlName="category" class="form-control" placeholder="Albem Name">
+<!--        <option *ngFor="let item of capList" [ngValue]="item">{{item}}</option>-->
+<!--      </select>-->
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-success float-right">Save</button>
